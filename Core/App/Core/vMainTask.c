@@ -46,7 +46,7 @@ static void vMainTask(void *argument)
 {
 	for ( ;; )
 	{
-		osDelay( 1 );
+		osDelay( 100 );
 	}
 }
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
