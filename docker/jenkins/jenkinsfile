@@ -1,4 +1,9 @@
 pipeline {
+    agent { 
+        node {
+            label 'stm32L432-jenkins'
+            }
+    }
     stages {
         stage('Build') {
             steps {
