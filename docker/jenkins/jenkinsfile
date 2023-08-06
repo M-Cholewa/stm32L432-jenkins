@@ -5,9 +5,22 @@ pipeline {
             }
     }
     stages {
+        stage('Prepare') {
+            steps {
+                echo "Preparing.."
+		        git branch: 'main', url: "https://github.com/M-Cholewa/stm32L432-jenkins"
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
+                sh '''
+                    ls -ltr
+                    cd Debug
+                    make -j12 clean
+                    make -j12 all
+                    ls -ltr
+                '''
             }
         }
         stage('Test') {
